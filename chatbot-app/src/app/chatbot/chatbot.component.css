@@ -1,0 +1,81 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  border: #4caf50 1px solid;
+  height: 50vh;
+}
+/* Estilos para o chat-container */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* Estilos para o bloco de mensagens */
+.messages {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  overflow-y: auto; /* Adiciona scroll vertical se necessário */
+  padding: 10px;
+}
+
+.messages p {
+  margin: 0 0 10px; /* Margem inferior para separar do conteúdo abaixo */
+  font-weight: bold;
+}
+
+.text-bot {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.text-bot .bot {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 100%; /* Limita o tamanho máximo do balão de mensagem */
+  word-wrap: break-word; /* Quebra de linha automática */
+}
+
+.text-bot .user {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  align-self:center; /* Alinha à direita para mensagens do usuário */
+  max-width: 100%; /* Limita o tamanho máximo do balão de mensagem */
+  word-wrap: break-word; /* Quebra de linha automática */
+}
+
+/* Estilos para o campo de entrada */
+input[type="text"] {
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+display: flexbox;
+flex-direction: column;
+}
+
+/* Media query para tornar o chat-container responsivo em telas menores */
+@media (max-width: 768px) {
+  .chat-container {
+    flex-direction: column; /* Altera para coluna em telas menores */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+  }
+
+  .messages {
+    flex: 1; /* Ocupa todo o espaço disponível */
+    overflow-y: auto; /* Adiciona scroll vertical se necessário */
+    padding: 10px;
+  }
+
+  .text-bot .bot, .text-bot .user {
+    max-width: 90%; /* Ajuste do tamanho máximo do balão de mensagem */
+  }
+}
